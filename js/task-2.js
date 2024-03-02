@@ -27,3 +27,11 @@ const images = [
     alt: 'Zebras on Zebra',
   },
 ];
+
+const gallery = images
+.map((image)=>`<li class="gallery-image"><img src="${image.url}" alt="${image.alt}"></li>`)
+.join ("");
+const galleryInsert = document.querySelector(".gallery");
+galleryInsert.insertAdjacentHTML("afterbegin", gallery);
+
+
