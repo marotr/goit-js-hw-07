@@ -12,6 +12,7 @@ const boxesDiv = document.getElementById('boxes');
 createButton.addEventListener("click", () => {
   const inputValue = parseInt(input.value);
   if (inputValue >= 1 && inputValue <= 100) {
+    boxesDiv.innerHTML = "";
     let size = 30; 
     for (let i = 0; i < inputValue; i++) {
       const box = document.createElement("div");
@@ -20,9 +21,10 @@ createButton.addEventListener("click", () => {
       box.style.backgroundColor = getRandomHexColor(); 
       boxesDiv.appendChild(box);
       size += 10; 
-    }
+    }    
   }
   input.value = ''; 
+  
 });
 
 destroyButton.addEventListener("click", () => {
